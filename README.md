@@ -12,9 +12,9 @@ HowTo:
      - g: green
      - y: yellow
      - n: no color
-     Example:
-             alert
-             gynny
+     - Example:
+         - alert
+         - gynny
 - Repeat until you find the word, or run out of words.
 
 
