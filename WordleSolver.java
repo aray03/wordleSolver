@@ -344,8 +344,16 @@ public class WordleSolver {
 		String[][] newWordList = new String[listSize][];
 		
 		int actualListLength = 0;
-		while(wordList[actualListLength] != null) {
-			actualListLength++;
+		try {
+			while(wordList[actualListLength] != null) {
+				
+				actualListLength++;
+				
+				
+			}
+		}
+		catch(Exception e){
+			
 		}
 		
 		int newWordCount = 0;
