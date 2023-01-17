@@ -17,5 +17,7 @@ HowTo:
          - gynny
 - Repeat until you find the word, or run out of words.
 
-
 Note: This is a work in progress and will still have some bugs. Currently I do not filter out a yellow locations when a specific letter is there, which will be fixed eventually.
+
+Also the wordbank that it uses currently is not the best, but will be improved upon.
+
