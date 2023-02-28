@@ -8,11 +8,15 @@ public class WordleSolver {
 	private final static int listSize = 5757;
 
 	
-	public  String YellowPos1 = "";
-	public	String YellowPos2 = "";
-	public	String YellowPos3 = "";
-	public	String YellowPos4 = "";
-	public	String YellowPos5 = "";
+	public static String YellowPos1 = "";
+	public static String YellowPos2 = "";
+	public static String YellowPos3 = "";
+	public static String YellowPos4 = "";
+	public static String YellowPos5 = "";
+
+	public static String[] abcYellowPos = {YellowPos1, YellowPos2, YellowPos3, YellowPos4, YellowPos5};
+
+	public static String abcBlackList = "";
 
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
@@ -55,7 +59,6 @@ public class WordleSolver {
 				String abcYellowList = "";
 
 
-				String abcBlackList = "";
 				String[] wordGuess = new String[6];
 				
 				
@@ -95,9 +98,7 @@ public class WordleSolver {
 							wordFound = false;
 							break;
 						}
-						else {
-							
-						}
+						
 						
 						if(guessedWord.length() == 5) {
 							
@@ -141,6 +142,7 @@ public class WordleSolver {
 									
 									if(addToList) {
 										abcYellowList += guessedWords[i];
+										abcYellowPos[i] += guessedWords[i];
 									}
 								}
 								else if(colorString[i].equals("N")) {
@@ -200,7 +202,7 @@ public class WordleSolver {
 						for(int yellowNum = 0; yellowNum < abcYellow.length; yellowNum++) {
 							
 							if(abcYellow[yellowNum].equals(abcBlack[blackNum])) {
-								abcBlack[blackNum] = " ";
+								abcBlack[blackNum] = "";
 								
 															
 							}
@@ -297,7 +299,12 @@ public class WordleSolver {
 	public static String[][] yellowChecker(String[][] wordList, String[] wordGuess, String abcYellow){
 		
 		System.out.println("- - - Word List - - -");
-		System.out.println("Yellow List " + abcYellow);
+		System.out.println("Yellow List: " + abcYellow);
+		System.out.println("Yellow Pos1: " + abcYellowPos[0]);
+		System.out.println("Yellow Pos2: " + abcYellowPos[1]);
+		System.out.println("Yellow Pos3: " + abcYellowPos[2]);
+		System.out.println("Yellow Pos4: " + abcYellowPos[3]);
+		System.out.println("Yellow Pos5: " + abcYellowPos[4]);
 		
 		String[] abcYellowList = abcYellow.split("(?!^)");
 		boolean wordHas = false;
