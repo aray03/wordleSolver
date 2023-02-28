@@ -143,8 +143,8 @@ public class WordleSolver {
 									//This adds Yellow to the various lists
 									if(addToList) {
 										abcYellowList += guessedWords[i];
-										abcYellowPos[i] += guessedWords[i];
 									}
+									abcYellowPos[i] += guessedWords[i];
 								}
 								else if(colorString[i].equals("N")) {
 								//	abcBlackList += guessedWords[i];
@@ -347,8 +347,9 @@ public class WordleSolver {
 						break;
 					}
 					
-					else if(wordList[i][z].equals(abcYellowList[yellowNum])) {
+					else if(wordList[i][z].equals(tempYellowABC[yellowNum])) {
 						wordHasNum++;
+						tempYellowABC[yellowNum] = "";
 						break;
 					}
 
