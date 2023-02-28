@@ -16,6 +16,8 @@ public class WordleSolver {
 
 	public static String[] abcYellowPos = {YellowPos1, YellowPos2, YellowPos3, YellowPos4, YellowPos5};
 
+	public static String abcYellowList = "";
+
 	public static String abcBlackList = "";
 
 	public static void main(String[] args) throws FileNotFoundException {
@@ -56,7 +58,6 @@ public class WordleSolver {
 				
 		//		String abcBlackList = "";
 
-				String abcYellowList = "";
 
 
 				String[] wordGuess = new String[6];
@@ -139,7 +140,7 @@ public class WordleSolver {
 											addToList = false;
 										}
 									}
-									
+									//This adds Yellow to the various lists
 									if(addToList) {
 										abcYellowList += guessedWords[i];
 										abcYellowPos[i] += guessedWords[i];
@@ -166,11 +167,6 @@ public class WordleSolver {
 								
 								
 							}
-							
-							
-							
-							
-							
 							
 							break;
 						}
@@ -312,10 +308,39 @@ public class WordleSolver {
 		
 		int newWordCount = 0;
 		int wordHasNum = 0;
-		
+
+		//abcYellowPos
+
 		for(int i = 0; i < wordList.length; i++) {
 			wordHas = false;
+			boolean badPos = false;
+
+			//Creates a tempYellowABC so we can see occurences of letters
+			String[] tempYellowABC = abcYellowList.clone();
+
+
 			for(int z = 0; z < 5; z++) {
+				//Parses through the yellow
+
+				/*
+				Ok so this is the psudocode for what we actually need to do!
+				for each yellowPos
+					go through every yellow
+						if yellow matches what is in pos in word, skip it
+				then do the normal thing
+				*/
+				if(wordList[i] == null){
+					break;
+				}
+
+				for(int x = 0; x < abcYellowPos[z].split("(?!^)").length; x++){
+
+					if(wordList[i][z].equals(abcYellowPos[z].split("(?!^)")[x])){
+						badPos = true;
+					}
+						
+				}
+
 				for(int yellowNum = 0; yellowNum < abcYellow.length(); yellowNum++) {
 					
 					if(wordList[i] == null) {
@@ -329,7 +354,8 @@ public class WordleSolver {
 
 				}
 			}
-			if(wordHasNum == abcYellow.length()) {
+			//Checks to see if the yellows in word has the same number as what we actually have
+			if(wordHasNum == abcYellow.length() && !badPos) {
 				newWordList[newWordCount] = wordList[i];
 				newWordCount++;
 				
