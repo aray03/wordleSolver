@@ -7,6 +7,13 @@ public class WordleSolver {
 	
 	private final static int listSize = 5757;
 
+	
+	public  String YellowPos1 = "";
+	public	String YellowPos2 = "";
+	public	String YellowPos3 = "";
+	public	String YellowPos4 = "";
+	public	String YellowPos5 = "";
+
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		
@@ -44,7 +51,10 @@ public class WordleSolver {
 	
 				
 		//		String abcBlackList = "";
+
 				String abcYellowList = "";
+
+
 				String abcBlackList = "";
 				String[] wordGuess = new String[6];
 				
@@ -120,6 +130,7 @@ public class WordleSolver {
 								else if(colorString[i].equals("Y")) {
 									boolean addToList = true;
 									
+									//This part checks if yellow is already in the list
 									String[] tempYellow = abcYellowList.split("(?!^)");
 									for(int z = 0; z < abcYellowList.length(); z++) {
 										if(tempYellow[z].equals(guessedWords[i])) {
