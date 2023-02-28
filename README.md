@@ -1,12 +1,12 @@
 # wordleSolver
-# This is 85% completed
+## The project is 90% completed
 This is a genaric Wordle solver I made because I am generally terrible at Wordle. You run this script while you are playing Wordle.
 
 Reqirements:
 Java
 
 HowTo:
-- Run the WordleSolver.java
+- Run the WordleSolver.java, by compiling and running it.
 - Plug in the word you had put in the wordle
 - Based on what color you get, match the corrosponding color with the word
      - g: green
@@ -15,9 +15,9 @@ HowTo:
      - Example:
          - alert
          - gynny
-- Repeat until you find the word, or run out of words.
+- Repeat until you find the word, or run out of words, which shouldn't happen, but it may
 
-Note: This is a work in progress and will still have some bugs. Currently I do not filter out a yellow locations when a specific letter is there, which will be fixed eventually.
+Note: This is generally finished but will still have some bugs. I am not the proudest about how it all runs/works so I will go back in sometime and pretty it up
 
-Also the wordbank that it uses currently is not the best, but will be improved upon.
+Also contains 2 wordbanks, one with all Wordle words in the creator's wordbank, and the other that doesn't contain already used words
 
